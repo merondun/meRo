@@ -6,6 +6,14 @@
 \usage{
 sum_stats(df, value)
 }
+\arguments{
+\item{df}{Tibble or data frame with a numeric column to summarize.}
+
+\item{value}{Numeric column to summarize. NA values will be removed with na.rm=TRUE.}
+}
+\value{
+Processed dataframe of summary statistics.
+}
 \description{
 This function calculates the mean, standard deviation, standard error, median, IQR, and confidence intervals for a given column.
 }
