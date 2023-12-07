@@ -18,7 +18,7 @@ melt_admixture <- function(prefix, famdir, qdir) {
     dplyr::select(V2) %>%
     dplyr::rename(ID=V2)
   
-  all_files <- list.files(qdir, pattern = "\\.Q$")
+  all_files <- list.files(qdir, pattern = "\\.Q$",full.names=TRUE)
   desired_files <- grep(paste0("^", prefix, "(\\.\\d+)?\\.Q$"), all_files, value = TRUE)
   
   qdat <- NULL
