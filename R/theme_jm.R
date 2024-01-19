@@ -23,14 +23,15 @@
 #' @export
 #' 
 #' @import ggplot2
+#' @import viridis
 
-theme_jm_longx <- function(font_size) {
+theme_jm <- function(font_size) {
   ggplot2::theme_bw() +
   ggplot2::theme(
-      axis.text.x = ggplot2::element_text(angle = 45, vjust = 1, hjust = 1),
       text = ggplot2::element_text(family = "Myriad", size = font_size),
       title = ggplot2::element_text(family = "Myriad", size = font_size),
       legend.text = ggplot2::element_text(family = "Myriad", size = font_size),
-      legend.title = ggplot2::element_text(family = "Myriad", size = font_size)
+      legend.title = ggplot2::element_text(family = "Myriad", size = font_size),
+      panel.border = element_rect(colour = "black", fill=NA, size=1)
     )
 }
