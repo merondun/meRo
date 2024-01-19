@@ -6,12 +6,6 @@
 \usage{
 .onLoad(libname, pkgname)
 }
-\arguments{
-\item{font_size}{Numeric value specifying the font size to be used for text elements in the plot. The default value is 10.}
-}
-\value{
-A ggplot2 theme object that can be added to ggplot2 plot objects.
-}
 \description{
-This function applies a custom ggplot2 theme with specific aesthetic modifications. It modifies the base black-and-white theme by adjusting the text elements including axis text, plot title, legend text, and legend title, and sets their font family to "Myriad". Additionally, it allows the user to specify the font size for these elements. The function also positions the legend at the top of the plot.
+Custom ggplot2 Theme Function
 }
