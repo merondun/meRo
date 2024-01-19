@@ -2,6 +2,8 @@
 
 export(melt_admixture)
 export(sum_stats)
+export(theme_jm_longx)
+import(ggplot2)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,summarise)
 importFrom(magrittr,"%>%")
