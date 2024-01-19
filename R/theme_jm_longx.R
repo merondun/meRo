@@ -12,14 +12,15 @@
 
 .onLoad <- function(libname, pkgname) {
   tryCatch({
-    library(showtext, quietly = TRUE)
+    requireNamespace("sysfonts", quietly = TRUE)
     font_path <- system.file("fonts", "MYRIADPRO-REGULAR.OTF", package = "meRo")
     if (file.exists(font_path)) {
-      showtext::font_add("Myriad", font_path)
+      sysfonts::font_add("Myriad", font_path)
       showtext::showtext_auto()
     }
   }, error = function(e) {
-    message("Could not load showtext and fonts correctly: ", e$message)
+    message <- paste("Could not load sysfonts and fonts correctly:", e$message)
+    packageStartupMessage(message)
   })
 }
 
