@@ -10,6 +10,19 @@
 #' 
 #' @import ggplot2
 
+.onLoad <- function(libname, pkgname) {
+  tryCatch({
+    library(showtext, quietly = TRUE)
+    font_path <- system.file("fonts", "MYRIADPRO-REGULAR.OTF", package = "meRo")
+    if (file.exists(font_path)) {
+      showtext::font_add("Myriad", font_path)
+      showtext::showtext_auto()
+    }
+  }, error = function(e) {
+    message("Could not load showtext and fonts correctly: ", e$message)
+  })
+}
+
 theme_jm_longx <- function(font_size) {
   ggplot2::theme_bw() +
   ggplot2::theme(
