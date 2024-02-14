@@ -135,7 +135,7 @@ admix_md %>%
 ```
 Outputs this plot: 
 
-![R Helper](man/figures/R_Help_Output.PNG)
+![Admixture plot](man/figures/Admixture_Plot.png)
 
 
 
