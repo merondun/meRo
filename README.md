@@ -26,7 +26,7 @@ Functions have proper help documentation within RStudio:
 ?sum_stats
 ```
 
-![R Helper](inst/examples/R_Help_Output.png)
+![R Helper](man/figures/R_Help_Output.png)
 
 ## R Scripts
 
