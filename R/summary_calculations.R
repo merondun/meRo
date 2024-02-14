@@ -6,6 +6,8 @@
 #' @return Processed dataframe of summary statistics.
 #' @importFrom dplyr %>% summarise
 #' @importFrom magrittr %>%
+#' @import viridis
+#' @import ggplot2
 #' @importFrom utils read.table
 #' @importFrom rlang enquo
 #' @importFrom stats IQR median qt sd

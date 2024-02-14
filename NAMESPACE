@@ -2,7 +2,6 @@
 
 export(melt_admixture)
 export(sum_stats)
-export(theme_jm)
 import(ggplot2)
 import(viridis)
 importFrom(dplyr,"%>%")
