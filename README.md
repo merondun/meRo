@@ -66,3 +66,76 @@ df %>% group_by(group) %>% sum_stats(value)
 2 Group2 0.228  0.881 0.161  0.115   1.21   -0.101     0.557
 3 Group3 0.106  1.19  0.196  0.251   1.49   -0.292     0.503
 ```
+
+### Plot ADMIXTURE using GGplot2 
+
+Melt admixture Q files and assign ID based on the `.fam` file. 
+
+**INPUTS:**
+
+Directory with ADMIXTURE `.Q` outputs, and the `.fam` file for the run within the same directory. 
+
+```
+library(tidyverse)
+library(meRo)
+
+prefix = 'admixture' #prefix name for the .Q and .fam files, within the Q directory
+q_directory = '~/merondun/meRo/data/' #directory with Q files and .fam file 
+
+#melted frame 
+admix = melt_admixture(prefix = prefix, qdir = q_directory)
+```
+
+**OUTPUTS:**
+
+Outputs a tidy frame with ID, the `Specified_K` for each Q file found, the various levels of `K` corresponding to that Q, and the ancestry coefficient `Q`. 
+
+```
+admix
+# A tibble: 8,888 × 4
+   ID               Specified_K K           Q
+   <chr>                  <int> <chr>   <dbl>
+ 1 004_CB_ATP_CHN_F           2 K1    0.0892 
+ 2 004_CB_ATP_CHN_F           2 K2    0.911  
+ 3 005_CB_ORW_CHN_M           2 K1    0.00001
+ 4 005_CB_ORW_CHN_M           2 K2    1.00   
+ 5 006_CB_ATP_CHN_F           2 K1    0.0839 
+ 6 006_CB_ATP_CHN_F           2 K2    0.916  
+ 7 007_CB_ATP_CHN_F           2 K1    0.0899 
+ 8 007_CB_ATP_CHN_F           2 K2    0.910  
+ 9 008_CC_RED_FIN_M           2 K1    0.884  
+10 008_CC_RED_FIN_M           2 K2    0.116 
+```
+
+This can be plotted easy enough, provided you have another metadata frame with ID and some variable of interest. You can then re-factor ID if you would like (e.g. based on distance, etc), or facet plots according to additional variables. **Always facet by `Specified_K` if you have multiple Q files**. 
+
+```
+md = read_tsv('~/merondun/meRo/data/admixture.metadata.txt')
+
+#merge metadata and admixture matrix 
+admix_md = left_join(admix,md)
+
+#plot 
+admix_md %>% 
+  ggplot(aes(x = ID, y = Q, fill = factor(K))) +
+  geom_col(color = NA, width = 1) +
+  facet_grid(Specified_K ~ DistanceGroup, scales = "free", space = "free") +  # Switch facet labels to the left
+  theme_minimal() + labs(x = "", y = "Ancestry Coefficient (Q)") +
+  scale_y_continuous(expand = c(0, 0), n.breaks = 3) +  # Move y-axis to the right
+  scale_x_discrete(expand = expand_scale(add = 1)) +
+  scale_fill_viridis(discrete=TRUE)+
+  theme(
+    panel.spacing.x = unit(0.1, "lines"),
+    axis.text.x = element_blank(),
+    axis.text.y = element_text(size = 7),
+    panel.grid = element_blank(),
+    strip.placement = "outside",  #Ensure facet labels are outside the plot area
+    legend.position = 'bottom'
+  ) 
+```
+Outputs this plot: 
+
+![R Helper](man/figures/R_Help_Output.PNG)
+
+
+

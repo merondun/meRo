@@ -4,12 +4,10 @@
 \alias{melt_admixture}
 \title{Melt Admixture}
 \usage{
-melt_admixture(prefix, famdir, qdir)
+melt_admixture(prefix, qdir)
 }
 \arguments{
 \item{prefix}{Prefix for the filenames.}
-
-\item{famdir}{Directory of the plink .FAM file.}
 
 \item{qdir}{Directory location for the Q files.}
 }
