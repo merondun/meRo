@@ -3,18 +3,17 @@
 #' This function reads specified files and processes them.
 #'
 #' @param prefix Prefix for the filenames.
-#' @param famdir Directory of the plink .FAM file.
 #' @param qdir Directory location for the Q files.
 #' @return Processed dataframe.
 #' @export
 #'
-melt_admixture <- function(prefix, famdir, qdir) {
+melt_admixture <- function(prefix, qdir) {
     #... rest of your function code
 }
 
-melt_admixture <- function(prefix, famdir, qdir) {
+melt_admixture <- function(prefix, qdir) {
   
-  samps <- read.table(paste0(famdir, prefix, '.fam'), header=FALSE) %>% 
+  samps <- read.table(paste0(qdir,'/',prefix, '.fam'), header=FALSE) %>% 
     dplyr::select(V2) %>%
     dplyr::rename(ID=V2)
   

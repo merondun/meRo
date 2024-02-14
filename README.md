@@ -9,7 +9,7 @@ For any questions or concerns, please open an issue on this repository or reach 
 ## Table of Contents
 
 - [Installation](#installation)
-- [R Scripts](#scripts)
+- [R Scripts](#r-scripts)
   - [Summary Stats](#summary-stats)
 
 ## Installation
@@ -25,6 +25,8 @@ Functions have proper help documentation within RStudio:
 ```
 ?sum_stats
 ```
+
+Returns: 
 
 ![R Helper](man/figures/R_Help_Output.PNG)
 
