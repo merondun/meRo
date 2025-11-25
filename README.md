@@ -34,7 +34,7 @@ Returns:
 
 ### Summary Stats 
 
-Reports mean, median, SD, SE, IQR, and lower/upper 95% CI. Works seamlessly in tidy pipes by group. Specify NAs are removed with na.rm=TRUE. 
+Reports mean, range, median, SD, SE, IQR, and lower/upper 95% CI. Works seamlessly in tidy pipes by group. Specify NAs are removed with na.rm=TRUE. 
 
 **INPUTS:**
 
