@@ -17,6 +17,8 @@ sum_stats <- function(df, value){
   value <- enquo(value)
   df %>% summarise(
     mean = mean(!!value, na.rm = TRUE),
+    min = min(!!value, na.rm = TRUE),
+    max =max(!!value, na.rm= TRUE),
     sd = sd(!!value, na.rm = TRUE),
     se = sd / sqrt(dplyr::n()),
     median = median(!!value, na.rm = TRUE),

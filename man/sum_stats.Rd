@@ -15,5 +15,5 @@ sum_stats(df, value)
 Processed dataframe of summary statistics.
 }
 \description{
-This function calculates the mean, standard deviation, standard error, median, IQR, and confidence intervals for a given column.
+This function calculates the mean, range, standard deviation, standard error, median, IQR, and confidence intervals for a given column.
 }
