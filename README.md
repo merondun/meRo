@@ -59,12 +59,12 @@ df %>% group_by(group) %>% sum_stats(value)
 **OUTPUTS:**
 
 ```
-# A tibble: 3 × 8
-  group    mean    sd    se  median   iqr conf_low conf_high
-  <chr>   <dbl> <dbl> <dbl>   <dbl> <dbl>    <dbl>     <dbl>
-1 Group1 0.0424 1.10  0.192 -0.0487  1.62   -0.349     0.433
-2 Group2 0.228  0.881 0.161  0.115   1.21   -0.101     0.557
-3 Group3 0.106  1.19  0.196  0.251   1.49   -0.292     0.503
+# A tibble: 3 × 10
+  group    mean   min   max    sd    se median   iqr conf_low conf_high
+  <chr>   <dbl> <dbl> <dbl> <dbl> <dbl>  <dbl> <dbl>    <dbl>     <dbl>
+1 Group1 -0.205 -2.31  1.91 0.909 0.158 -0.262 0.898   -0.527     0.118
+2 Group2  0.227 -1.57  2.10 0.966 0.171  0.332 1.17    -0.121     0.576
+3 Group3 -0.192 -2.05  2.19 0.961 0.163 -0.348 1.46    -0.522     0.138
 ```
 
 ### Plot ADMIXTURE using GGplot2 
