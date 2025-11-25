@@ -1,6 +1,6 @@
 Package: meRo
 Title: Everyday omics
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Justin", "Merondun", , "heritabilities@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
